@@ -10,7 +10,6 @@ typedef struct Node node;
 int tam;
 
 void inicia(node *PILHA);
-void opcao(node *PILHA, int op);
 void exibe(node *PILHA);
 void libera(node *PILHA);
 void push(node *PILHA);
@@ -25,6 +24,11 @@ int main(void) {
 	else {
 	inicia(PILHA);
 	}
+}
+void inicia(node *PILHA)
+{
+ PILHA->prox = NULL;
+ tam=0;
 }
 
 int vazia(node *PILHA) {
@@ -45,7 +49,6 @@ node *aloca() {
   return novo;
  }
 }
-
 
 void exibe(node *PILHA) {
  if(vazia(PILHA)){
